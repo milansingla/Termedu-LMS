@@ -1,0 +1,30 @@
+# ── All search engine crawlers — allow public pages ──────────────────────────
+User-agent: *
+Allow: /
+Allow: /onboarding
+Allow: /login
+Allow: /pricing
+Allow: /about
+Allow: /contact
+Allow: /privacy-policy
+Allow: /terms
+
+# Block authenticated / private areas
+Disallow: /admin/
+Disallow: /lecturer/
+Disallow: /home
+Disallow: /courses
+Disallow: /live
+Disallow: /profile
+Disallow: /dashboard
+Disallow: /assignments
+Disallow: /downloads
+Disallow: /support
+Disallow: /notifications
+Disallow: /projects
+Disallow: /otp
+
+# Block API
+Disallow: /api/
+
+Sitemap: https://app.termedu.in/sitemap.xml

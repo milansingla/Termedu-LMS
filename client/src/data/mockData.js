@@ -1,0 +1,168 @@
+export const COURSES = [
+  {
+    id: 1,
+    title: "STARTER Program",
+    subtitle: "Online Recorded Courses · Self-Paced Learning",
+    price: 5500,
+    originalPrice: 5500,
+    rating: 4.8,
+    students: 1840,
+    badge: "Bestseller",
+    badgeColor: "bg-secondary",
+    instructor: "T.E.R.M. Edu Team",
+    instructorAvatar: null,
+    gradient: "from-[#1a0533] via-[#2d1060] to-[#0d0d1a]",
+    gradientIcon: "menu_book",
+    category: "Starter",
+    lectures: 45,
+    duration: "90 hrs",
+    level: "Beginner",
+    description: "Get started with T.E.R.M. Edu's curated recorded course library. Access lifetime content, build your portfolio, and earn a completion certificate — all at your own pace.",
+    features: [
+      "Online recorded courses only",
+      "Lifetime access to all content",
+      "Community support & forums",
+      "Portfolio assignments",
+      "Completion certificate",
+    ],
+    curriculum: [
+      { section: "Module 1 — Foundations", lectures: 10, duration: "20 hrs" },
+      { section: "Module 2 — Core Concepts", lectures: 15, duration: "30 hrs" },
+      { section: "Module 3 — Applied Projects", lectures: 12, duration: "25 hrs" },
+      { section: "Module 4 — Assessment & Certificate", lectures: 8, duration: "15 hrs" },
+    ],
+    enrolled: false,
+    progress: 0,
+    planKey: "starter",
+  },
+  {
+    id: 2,
+    title: "GROWTH Program",
+    subtitle: "Live Classes · Mentorship · Project Feedback",
+    price: 10000,
+    originalPrice: 15000,
+    rating: 4.9,
+    students: 960,
+    badge: "Popular",
+    badgeColor: "bg-primary",
+    instructor: "T.E.R.M. Edu Mentors",
+    instructorAvatar: null,
+    gradient: "from-[#3b0082] via-[#5b21b6] to-[#0f1940]",
+    gradientIcon: "live_tv",
+    category: "Growth",
+    lectures: 60,
+    duration: "130 hrs",
+    level: "Intermediate",
+    description: "The most popular T.E.R.M. Edu program. Get everything in Starter PLUS real-time live classes, 1-on-1 mentor sessions, doubt clearing, and structured project feedback to level up fast.",
+    features: [
+      "All recorded courses included",
+      "Live interactive classes (weekly)",
+      "Mentor interaction & office hours",
+      "Doubt clearing sessions",
+      "Project feedback & review",
+    ],
+    curriculum: [
+      { section: "Module 1 — Recorded Foundation Track", lectures: 20, duration: "40 hrs" },
+      { section: "Module 2 — Live Interaction Track", lectures: 15, duration: "30 hrs" },
+      { section: "Module 3 — Mentor-Guided Projects", lectures: 15, duration: "35 hrs" },
+      { section: "Module 4 — Doubt Sessions & Review", lectures: 10, duration: "25 hrs" },
+    ],
+    enrolled: true,
+    progress: 38,
+    planKey: "growth",
+  },
+  {
+    id: 3,
+    title: "PREMIUM Program",
+    subtitle: "Guaranteed Internship · Career Placement",
+    price: 15500,
+    originalPrice: 25000,
+    rating: 5.0,
+    students: 420,
+    badge: "Best Value",
+    badgeColor: "bg-primary",
+    instructor: "T.E.R.M. Edu Industry Team",
+    instructorAvatar: null,
+    gradient: "from-[#1a0020] via-[#4a0e6e] to-[#1a1040]",
+    gradientIcon: "diamond",
+    category: "Premium",
+    lectures: 80,
+    duration: "200 hrs",
+    level: "Advanced",
+    description: "T.E.R.M. Edu's flagship career program. Everything in GROWTH, plus a guaranteed internship, resume prep, mock interviews, and direct industry exposure. Best for career-focused learners.",
+    features: [
+      "Everything in GROWTH included",
+      "Guaranteed internship placement*",
+      "Resume & LinkedIn profile review",
+      "Mock interviews with industry experts",
+      "Industry exposure & networking sessions",
+    ],
+    curriculum: [
+      { section: "Module 1 — Complete Learning Track", lectures: 35, duration: "80 hrs" },
+      { section: "Module 2 — Career Preparation", lectures: 20, duration: "40 hrs" },
+      { section: "Module 3 — Internship Track", lectures: 15, duration: "50 hrs" },
+      { section: "Module 4 — Placement Support", lectures: 10, duration: "30 hrs" },
+    ],
+    enrolled: false,
+    progress: 0,
+    planKey: "premium",
+  },
+];
+
+export const LECTURES = [
+  { id: 1, courseId: 2, title: "Lec 01: Introduction to the Growth Path", duration: "42:00", watched: true },
+  { id: 2, courseId: 2, title: "Lec 02: Setting Up Your Learning Environment", duration: "38:00", watched: true },
+  { id: 3, courseId: 2, title: "Lec 03: Core Concepts & Frameworks", duration: "55:00", watched: true },
+  { id: 4, courseId: 2, title: "Lec 04: Live Q&A Session - Week 1", duration: "60:00", watched: false },
+  { id: 5, courseId: 2, title: "Lec 05: Applied Project Walkthrough", duration: "48:00", watched: false },
+  { id: 6, courseId: 1, title: "Lec 01: Starter Track Overview", duration: "30:00", watched: true },
+  { id: 7, courseId: 1, title: "Lec 02: Foundations Module", duration: "45:00", watched: false },
+];
+
+export const LIVE_CLASSES = [
+  { id: 1, title: "GROWTH Live — Weekly Doubt Clearing", instructor: "T.E.R.M. Edu Mentors", time: "10:00 AM", date: "Today", status: "live", students: 84, roomName: "term-growth-live" },
+  { id: 2, title: "PREMIUM Live — Career Strategy Session", instructor: "T.E.R.M. Industry Team", time: "2:00 PM", date: "Today", status: "upcoming", students: 0, roomName: "term-premium-career" },
+  { id: 3, title: "GROWTH Live — Project Review & Feedback", instructor: "T.E.R.M. Edu Mentors", time: "5:00 PM", date: "Tomorrow", status: "upcoming", students: 0, roomName: "term-growth-project" },
+  { id: 4, title: "PREMIUM — Mock Interview Workshop", instructor: "T.E.R.M. Industry Team", time: "11:00 AM", date: "23 Mar", status: "recorded", students: 210, roomName: "term-premium-interview" },
+];
+
+export const ASSIGNMENTS = [
+  { id: 1, title: "Portfolio Project — Module 1 Submission", course: "STARTER Program", due: "25 Mar 2026", submitted: false, marks: null, total: 50, student: "Alex Johnson" },
+  { id: 2, title: "Live Session Reflection & Notes", course: "GROWTH Program", due: "23 Mar 2026", submitted: true, marks: 44, total: 50, student: "Alex Johnson" },
+  { id: 3, title: "Career Goal & Resume Draft", course: "PREMIUM Program", due: "28 Mar 2026", submitted: false, marks: null, total: 30, student: "Priya Sharma" },
+  { id: 4, title: "Applied Project — Peer Review", course: "GROWTH Program", due: "20 Mar 2026", submitted: true, marks: 36, total: 40, student: "Rahul Mehta" },
+  { id: 5, title: "Module 2 — Core Concepts Quiz", course: "STARTER Program", due: "21 Mar 2026", submitted: true, marks: null, total: 20, student: "Priya Sharma" },
+  { id: 6, title: "PREMIUM Capstone — Draft Submission", course: "PREMIUM Program", due: "22 Mar 2026", submitted: true, marks: null, total: 100, student: "Dev Kapoor" },
+];
+
+export const STUDY_MATERIALS = [
+  { id: 1, title: "STARTER — Complete Course Workbook", type: "pdf", size: "5.2 MB", course: "STARTER Program", icon: "picture_as_pdf", color: "text-purple-500" },
+  { id: 2, title: "GROWTH — Mentor Session Notes", type: "pdf", size: "2.1 MB", course: "GROWTH Program", icon: "picture_as_pdf", color: "text-purple-500" },
+  { id: 3, title: "GROWTH — Live Class Recordings Guide", type: "pdf", size: "1.8 MB", course: "GROWTH Program", icon: "picture_as_pdf", color: "text-purple-500" },
+  { id: 4, title: "PREMIUM — Resume Template Pack", type: "doc", size: "3.4 MB", course: "PREMIUM Program", icon: "description", color: "text-pink-500" },
+  { id: 5, title: "PREMIUM — Interview Preparation Guide", type: "pdf", size: "4.6 MB", course: "PREMIUM Program", icon: "picture_as_pdf", color: "text-pink-500" },
+  { id: 6, title: "Industry Exposure — Company List", type: "pdf", size: "0.9 MB", course: "PREMIUM Program", icon: "picture_as_pdf", color: "text-pink-500" },
+];
+
+export const SUPPORT_MESSAGES = [
+  { id: 1, from: "support", text: "Hello! Welcome to T.E.R.M. Edu support. How can I help you today?", time: "10:00 AM" },
+  { id: 2, from: "user", text: "Hi! I'd like to know the difference between the GROWTH and PREMIUM programs.", time: "10:02 AM" },
+  { id: 3, from: "support", text: "Great question! GROWTH gives you live classes, mentor interaction, and project feedback. PREMIUM adds a guaranteed internship, resume prep, and mock interviews with industry experts.", time: "10:03 AM" },
+  { id: 4, from: "user", text: "Which one is better for someone looking for a job?", time: "10:04 AM" },
+  { id: 5, from: "support", text: "We'd recommend PREMIUM for career-focused learners — it's designed specifically for placement with guaranteed internship support. Would you like to know more?", time: "10:05 AM" },
+];
+
+export const CATEGORIES = [
+  { name: "Starter", icon: "menu_book" },
+  { name: "Growth", icon: "trending_up" },
+  { name: "Premium", icon: "diamond" },
+  { name: "Live", icon: "live_tv" },
+  { name: "Mentorship", icon: "support_agent" },
+  { name: "Career", icon: "work" },
+];
+
+export const USERS = [
+  { id: 1, name: "Alex Johnson", email: "alex@student.com", role: "student", avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuDu_dnRaLNKc3P_yrP-3dpGXbeRt42W3KucH7ipiOxA91JHmd4Z5ANZK2yG9PlY85HYcDXtC_V0cWotHNEtG2VKDOSEYeB3QVwfwEtlpY1iEnKiibCgcATh0q9kEnmsTRx5unVxaL__VfTm7O_H-15KvqKJrmZ2k-Ue715kIfQ7D43weoekrVUVR46SnNJd907WR_AmaanQBINm--BC0nGwq4fsViV-BjcSahxULrG3ZuaHcfL3wQhM05dAxL3baMY80hTn9ekerrMl" },
+  { id: 2, name: "T.E.R.M. Instructor", email: "instructor@termedu.in", role: "lecturer", avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuBcH7L5lVpVdzhlU9cFsTCDi_VoxrTKqxJTSL3Zd-ofQUZFqArNSx0ykgctjeykqIQOH-ryUMEYtMigsoGY3sEnOLpYC5mqLlpHCKl6LnXRSB1N5o8TJYwMZgs7tR1sYs9rnrrHERxxWpZjRFOTxVaSlrFkRyZfZJ7MUp4YQhxBAgqqWO-FBv4IknwOc_R-ECt6dlCLCtnwDcgE-CSu0g-ECWZMbEQLXb9iZ7u5m78F2jxL6gHtjco4-3AH4BhZrbpLGGHJw90tJrul" },
+  { id: 3, name: "Admin", email: "admin@termedu.in", role: "admin", avatar: "https://lh3.googleusercontent.com/aida-public/AB6AXuBAh1W_Cy4gvPEv58cfL7S4ZwQOsOllZPllzaMVTL1zsCKJMjZEw35D3OXoVZATB23qAFyVlXXiS6d26vJC-TLBPa-SjyzLID-uYcZTEaqJP72XqqDxg_ccbmyO7RRyCpekb0pFR6MnX-iBssHayNHxWg4j7CgwBR4KxNQ0At_2vjlaRgfftUjw_2jY_n5GQ_HyTBqB1ntqc4PWaQT_G-iVVnTW6MU6kNPIZJ_pg_N2ZRr30xDiImb1SBn4GW6ARSSRbp0dMdT5BlZi" },
+];

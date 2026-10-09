@@ -1,0 +1,304 @@
+@import "tailwindcss";
+@import "./premium-enhance.css";
+
+@theme {
+  --color-background: #fef7ff;
+  --color-surface: #fef7ff;
+  --color-surface-bright: #fef7ff;
+  --color-surface-dim: #dfd7e5;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f9f1ff;
+  --color-surface-container: #f3ebf9;
+  --color-surface-container-high: #ede5f3;
+  --color-surface-container-highest: #e7e0ed;
+  --color-surface-variant: #e7e0ed;
+  --color-surface-tint: #6c37df;
+
+  --color-primary: #4400a8;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #5d21d0;
+  --color-on-primary-container: #cbb8ff;
+  --color-primary-fixed: #e9ddff;
+  --color-primary-fixed-dim: #cfbcff;
+  --color-on-primary-fixed: #22005d;
+  --color-on-primary-fixed-variant: #540bc7;
+  --color-inverse-primary: #cfbcff;
+
+  --color-secondary: #006a6a;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #7af2f3;
+  --color-on-secondary-container: #006e6f;
+  --color-secondary-fixed: #7df5f6;
+  --color-secondary-fixed-dim: #5dd8d9;
+  --color-on-secondary-fixed: #002020;
+  --color-on-secondary-fixed-variant: #004f50;
+
+  --color-tertiary: #572d36;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #71434c;
+  --color-on-tertiary-container: #f0b3be;
+  --color-tertiary-fixed: #ffd9df;
+  --color-tertiary-fixed-dim: #f4b6c1;
+  --color-on-tertiary-fixed: #330f19;
+  --color-on-tertiary-fixed-variant: #663a43;
+
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #93000a;
+
+  --color-on-background: #1d1a24;
+  --color-on-surface: #1d1a24;
+  --color-on-surface-variant: #494455;
+  --color-outline: #7a7486;
+  --color-outline-variant: #cbc3d7;
+  --color-inverse-surface: #332f39;
+  --color-inverse-on-surface: #f6eefc;
+
+  --font-headline: "Plus Jakarta Sans", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-label: "Inter", sans-serif;
+}
+
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Prevent iOS Safari from auto-zooming when focusing inputs with small font-size */
+input, textarea, select {
+  font-size: max(1rem, 16px);
+}
+
+/* ── iOS safe-area utilities ── */
+.pt-safe-topbar {
+  padding-top: max(1rem, env(safe-area-inset-top));
+}
+.pb-safe-nav {
+  padding-bottom: max(1.25rem, env(safe-area-inset-bottom));
+}
+
+/* NOTE: No overflow set on html — setting overflow:hidden on the html element
+   changes the scroll container and breaks position:fixed in Android WebView,
+   causing the header to glitch or scroll with content. Use body only. */
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #fef7ff;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Only clip horizontal overflow on body, not html */
+}
+
+h1, h2, h3, h4 {
+  font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+#root {
+  width: 100%;
+  min-height: 100dvh;
+}
+
+.material-symbols-outlined {
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  user-select: none;
+}
+
+.no-scrollbar::-webkit-scrollbar { display: none; }
+.no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+@keyframes subtle-pulse {
+  0%, 100% { opacity: 0.3; transform: scaleX(0.95); }
+  50% { opacity: 1; transform: scaleX(1); }
+}
+.animate-loader { animation: subtle-pulse 2s ease-in-out infinite; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pageEnter {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: none; }
+}
+.animate-page-enter { animation: pageEnter 0.22s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+@keyframes loader-bar {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+.animate-loader-bar { animation: loader-bar 1.6s ease-in-out infinite; }
+
+@keyframes ping-slow {
+  75%, 100% { transform: scale(2); opacity: 0; }
+}
+.animate-ping { animation: ping-slow 1s cubic-bezier(0, 0, 0.2, 1) infinite; }
+
+@keyframes slide-up {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+.animate-slide-up { animation: slide-up 0.3s cubic-bezier(0.32, 0.72, 0, 1); }
+
+@keyframes carouselSlideIn {
+  from { opacity: 0; transform: translateX(40px) scale(0.98); }
+  to   { opacity: 1; transform: translateX(0)  scale(1); }
+}
+.animate-carousel-in { animation: carouselSlideIn 0.55s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+@keyframes carouselProgress {
+  from { transform: scaleX(0); }
+  to   { transform: scaleX(1); }
+}
+.animate-carousel-progress { animation: carouselProgress 4.5s linear both; }
+
+.signature-gradient { background: linear-gradient(135deg, #4400a8 0%, #5d21d0 100%); }
+.bg-teal-gradient { background: linear-gradient(135deg, #006a6a 0%, #004f50 100%); }
+
+/* ── Dark Mode ── */
+.dark {
+  --color-background: #0f0d14;
+  --color-surface: #0f0d14;
+  --color-surface-bright: #1e1a2a;
+  --color-surface-dim: #0a0810;
+  --color-surface-container-lowest: #18151f;
+  --color-surface-container-low: #1e1a2a;
+  --color-surface-container: #242030;
+  --color-surface-container-high: #2b2639;
+  --color-surface-container-highest: #332f42;
+  --color-surface-variant: #2b2639;
+  --color-surface-tint: #cfbcff;
+
+  --color-primary: #cfbcff;
+  --color-on-primary: #22005d;
+  --color-primary-container: #3a0096;
+  --color-on-primary-container: #e9ddff;
+  --color-primary-fixed: #e9ddff;
+  --color-primary-fixed-dim: #cfbcff;
+  --color-on-primary-fixed: #22005d;
+  --color-on-primary-fixed-variant: #540bc7;
+  --color-inverse-primary: #4400a8;
+
+  --color-secondary: #5dd8d9;
+  --color-on-secondary: #003737;
+  --color-secondary-container: #004f50;
+  --color-on-secondary-container: #7af2f3;
+
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+
+  --color-on-background: #e9e0f5;
+  --color-on-surface: #e9e0f5;
+  --color-on-surface-variant: #cbc3d7;
+  --color-outline: #958fa0;
+  --color-outline-variant: #494455;
+  --color-inverse-surface: #e7e0ed;
+  --color-inverse-on-surface: #332f39;
+}
+
+.dark body {
+  background-color: #0f0d14;
+}
+
+.dark .bg-white {
+  background-color: #18151f !important;
+}
+
+.dark .bg-white\/80 {
+  background-color: rgba(24, 21, 31, 0.85) !important;
+}
+
+.dark .bg-white\/20 {
+  background-color: rgba(255,255,255,0.1) !important;
+}
+
+.dark .border-white\/10 {
+  border-color: rgba(255,255,255,0.08) !important;
+}
+
+.dark .text-slate-400 {
+  color: #7c7590 !important;
+}
+
+.dark .text-slate-500 {
+  color: #9890a8 !important;
+}
+
+.dark .border-slate-200 {
+  border-color: #2b2639 !important;
+}
+
+.dark .bg-slate-50 {
+  background-color: #1e1a2a !important;
+}
+
+.dark .bg-slate-100 {
+  background-color: #242030 !important;
+}
+
+.dark .text-slate-700 {
+  color: #cbc3d7 !important;
+}
+
+.dark .hover\:bg-slate-100:hover {
+  background-color: #242030 !important;
+}
+
+/* Additional dark-mode overrides for missed opacity variants */
+.dark .bg-white\/90 {
+  background-color: rgba(24, 21, 31, 0.95) !important;
+}
+
+.dark .bg-white\/95 {
+  background-color: rgba(24, 21, 31, 0.97) !important;
+}
+
+.dark .bg-slate-50\/80 {
+  background-color: rgba(30, 26, 42, 0.90) !important;
+}
+
+.dark .bg-slate-800 {
+  background-color: #1e1a2a !important;
+}
+
+.dark .bg-slate-900 {
+  background-color: #0f0d14 !important;
+}
+
+.dark .text-slate-900 {
+  color: #e9e0f5 !important;
+}
+
+.dark .text-slate-800 {
+  color: #cbc3d7 !important;
+}
+
+.dark .text-slate-600 {
+  color: #9890a8 !important;
+}
+
+.dark .text-slate-300 {
+  color: #7c7590 !important;
+}
+
+.dark .border-slate-100 {
+  border-color: #242030 !important;
+}
+
+.dark .border-slate-300 {
+  border-color: #2b2639 !important;
+}
+
+.dark .hover\:bg-slate-50:hover {
+  background-color: #1e1a2a !important;
+}
+
+.dark .placeholder\:text-slate-400::placeholder {
+  color: #7c7590 !important;
+}
+
+@keyframes skipFlashFade {
+  0%   { opacity: 1; }
+  100% { opacity: 0; }
+}

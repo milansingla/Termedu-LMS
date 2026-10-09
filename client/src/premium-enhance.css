@@ -1,0 +1,615 @@
+/*
+ * T.E.R.M. Edu — Premium Dark Theme Enhancement
+ * CSS-only. No class renames. No DOM/JS changes.
+ * ─────────────────────────────────────────────
+ */
+
+/* ═══════════════════════════════════════════
+   1. DESIGN TOKENS
+═══════════════════════════════════════════ */
+:root {
+  --term-bg:            #0A0A1A;
+  --term-card:          #13132A;
+  --term-skeleton:      #1E1E2E;
+  --term-purple:        #7C3AED;
+  --term-purple-20:     rgba(124, 58, 237, 0.20);
+  --term-purple-40:     rgba(124, 58, 237, 0.40);
+  --term-purple-glow:   0 0 0 1.5px rgba(124,58,237,0.45), 0 8px 32px rgba(124,58,237,0.18);
+  --term-text:          #FFFFFF;
+  --term-secondary:     #A0A0B8;
+  --term-muted:         #6B6B80;
+  --term-green-bg:      rgba(22, 163, 74, 0.15);
+  --term-orange-bg:     rgba(234, 88, 12, 0.15);
+  --term-border-subtle: rgba(124, 58, 237, 0.12);
+}
+
+/* ═══════════════════════════════════════════
+   2. SHIMMER SKELETON ANIMATION
+═══════════════════════════════════════════ */
+@keyframes term-shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position:  200% center; }
+}
+
+.skeleton-shimmer,
+.skeleton-hero,
+.skeleton-pill,
+.skeleton-card,
+.skeleton-text-lg,
+.skeleton-text-sm,
+.skeleton-avatar,
+.skeleton-stat-box,
+.skeleton-menu-row,
+.skeleton-input,
+.skeleton-tab,
+.skeleton-tab-btn {
+  background-color: var(--term-skeleton);
+  background-image: linear-gradient(
+    90deg,
+    var(--term-skeleton) 0%,
+    rgba(255, 255, 255, 0.07) 50%,
+    var(--term-skeleton) 100%
+  );
+  background-size: 200% 100%;
+  animation: term-shimmer 1.5s ease-in-out infinite;
+}
+
+/* Skeleton shape presets */
+.skeleton-hero      { height: 11rem; border-radius: 1.5rem; }
+.skeleton-pill      { height: 2.25rem; min-width: 5rem; border-radius: 999px; display: inline-block; }
+.skeleton-card      { height: 17rem; border-radius: 1rem; }
+.skeleton-text-lg   { height: 1.5rem; border-radius: 0.375rem; }
+.skeleton-text-sm   { height: 1rem; border-radius: 0.375rem; }
+.skeleton-avatar    { width: 5rem; height: 5rem; border-radius: 50%; }
+.skeleton-stat-box  { height: 6.5rem; border-radius: 1rem; }
+.skeleton-menu-row  { height: 3.5rem; border-radius: 0.75rem; }
+.skeleton-input     { height: 3rem; border-radius: 0.75rem; }
+.skeleton-tab       { height: 2.5rem; border-radius: 999px; min-width: 6rem; display: inline-block; }
+.skeleton-tab-btn   { height: 2.5rem; border-radius: 0.75rem; }
+
+
+/* ═══════════════════════════════════════════
+   3. DARK MODE — BASE OVERRIDES
+═══════════════════════════════════════════ */
+
+/* Deep background */
+.dark body,
+.dark #root {
+  background-color: var(--term-bg);
+}
+
+/* Override Tailwind dark color surface tokens */
+.dark {
+  --color-background:                #0A0A1A;
+  --color-surface:                   #0A0A1A;
+  --color-surface-dim:               #060610;
+  --color-surface-container-lowest:  #13132A;
+  --color-surface-container-low:     #16162E;
+  --color-surface-container:         #1A1A34;
+  --color-surface-container-high:    #1E1E38;
+  --color-surface-container-highest: #23233E;
+}
+
+/* Tailwind bg-background → deep dark */
+.dark .bg-background {
+  background-color: var(--term-bg) !important;
+}
+
+/* ── Surface containers ── */
+.dark .bg-surface-container-lowest {
+  background-color: var(--term-card) !important;
+}
+.dark .bg-surface-container-low {
+  background-color: #16162E !important;
+}
+.dark .bg-surface-container {
+  background-color: #1A1A34 !important;
+}
+.dark .bg-surface-container-high {
+  background-color: #1E1E38 !important;
+}
+.dark .bg-surface-container-highest {
+  background-color: #23233E !important;
+}
+
+/* ── White surfaces → dark card ── */
+.dark .bg-white {
+  background-color: var(--term-card) !important;
+}
+.dark .bg-white\/80,
+.dark .bg-white\/85,
+.dark .bg-white\/90,
+.dark .bg-white\/95 {
+  background-color: rgba(19, 19, 42, 0.95) !important;
+}
+.dark .bg-white\/20 {
+  background-color: rgba(255,255,255,0.08) !important;
+}
+.dark .bg-white\/30 {
+  background-color: rgba(255,255,255,0.12) !important;
+}
+.dark .bg-white\/40 {
+  background-color: rgba(255,255,255,0.14) !important;
+}
+
+/* ── Slate surfaces → card dark ── */
+.dark .bg-slate-50  { background-color: #16162E !important; }
+.dark .bg-slate-100 { background-color: #1A1A34 !important; }
+.dark .bg-slate-200 { background-color: #1E1E38 !important; }
+.dark .bg-slate-800 { background-color: #0A0A1A !important; }
+.dark .bg-slate-900 { background-color: #060610 !important; }
+.dark .bg-slate-50\/80 { background-color: rgba(22, 22, 46, 0.92) !important; }
+
+/* ── Slate text ── */
+.dark .text-slate-300 { color: var(--term-muted)     !important; }
+.dark .text-slate-400 { color: #8585a8               !important; }
+.dark .text-slate-500 { color: var(--term-secondary)  !important; }
+.dark .text-slate-600 { color: #a0a0b8               !important; }
+.dark .text-slate-700 { color: #c0c0d4               !important; }
+.dark .text-slate-800 { color: #dcdce8               !important; }
+.dark .text-slate-900 { color: var(--term-text)       !important; }
+
+/* ── Border colors ── */
+.dark .border-slate-100 { border-color: rgba(124,58,237,0.10) !important; }
+.dark .border-slate-200 { border-color: rgba(124,58,237,0.12) !important; }
+.dark .border-slate-300 { border-color: rgba(124,58,237,0.18) !important; }
+.dark .border-white\/10 { border-color: rgba(124,58,237,0.10) !important; }
+.dark .border-outline-variant\/10 { border-color: rgba(124,58,237,0.10) !important; }
+.dark .border-outline-variant\/20 { border-color: rgba(124,58,237,0.15) !important; }
+
+
+/* ═══════════════════════════════════════════
+   4. DARK MODE — VIOLET → PURPLE ACTIVE STATES
+═══════════════════════════════════════════ */
+
+/* Active nav item pill */
+.dark .bg-violet-100 {
+  background-color: rgba(124, 58, 237, 0.20) !important;
+}
+.dark .text-violet-700 {
+  color: #a78bfa !important;
+}
+.dark .bg-violet-50 {
+  background-color: rgba(124, 58, 237, 0.10) !important;
+}
+.dark .text-violet-600 {
+  color: #c4b5fd !important;
+}
+
+/* Hover effects */
+.dark .hover\:bg-violet-50:hover {
+  background-color: rgba(124, 58, 237, 0.10) !important;
+}
+.dark .hover\:bg-violet-100:hover {
+  background-color: rgba(124, 58, 237, 0.18) !important;
+}
+.dark .hover\:text-violet-600:hover {
+  color: #c4b5fd !important;
+}
+.dark .hover\:bg-slate-100:hover {
+  background-color: rgba(124, 58, 237, 0.08) !important;
+}
+.dark .hover\:bg-slate-50:hover {
+  background-color: rgba(124, 58, 237, 0.06) !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   5. DARK MODE — NAVIGATION
+═══════════════════════════════════════════ */
+
+/* Bottom nav bar */
+.dark nav.rounded-t-3xl {
+  background-color: rgba(19, 19, 42, 0.96) !important;
+  border-top: 1px solid var(--term-border-subtle);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Side nav panel */
+.dark aside {
+  background-color: var(--term-card) !important;
+  border-right-color: var(--term-border-subtle) !important;
+}
+
+/* Side nav active item keeps signature-gradient as-is (purple) */
+/* Side nav inactive item hover */
+.dark aside button:not(.signature-gradient):hover {
+  background-color: rgba(124, 58, 237, 0.10) !important;
+  color: #c4b5fd !important;
+}
+
+/* Side nav logout hover */
+.dark .hover\:bg-red-50:hover {
+  background-color: rgba(220, 38, 38, 0.12) !important;
+}
+.dark .hover\:text-red-600:hover {
+  color: #f87171 !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   6. DARK MODE — HEADER / TOPBAR
+═══════════════════════════════════════════ */
+
+/* Fixed course header */
+.dark header.fixed {
+  background-color: rgba(10, 10, 26, 0.96) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--term-border-subtle);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+}
+
+/* Generic sticky / fixed topbar */
+.dark .bg-white\/90.backdrop-blur-xl,
+.dark .bg-white\/95.backdrop-blur-xl {
+  background-color: rgba(10, 10, 26, 0.96) !important;
+  border-bottom: 1px solid var(--term-border-subtle);
+}
+
+
+/* ═══════════════════════════════════════════
+   7. DARK MODE — INPUTS & FORMS
+═══════════════════════════════════════════ */
+
+.dark input[type="text"],
+.dark input[type="email"],
+.dark input[type="password"],
+.dark input[type="search"],
+.dark input[type="url"],
+.dark input[type="number"],
+.dark input:not([type]) {
+  background-color: var(--term-skeleton) !important;
+  border: 1px solid var(--term-purple-40) !important;
+  color: var(--term-text) !important;
+  border-radius: 0.75rem;
+}
+
+.dark input:focus-within,
+.dark input:focus {
+  border-color: var(--term-purple) !important;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.18) !important;
+  outline: none !important;
+}
+
+.dark input::placeholder {
+  color: var(--term-muted) !important;
+}
+
+.dark textarea {
+  background-color: var(--term-skeleton) !important;
+  border: 1px solid var(--term-purple-40) !important;
+  color: var(--term-text) !important;
+}
+
+.dark textarea:focus {
+  border-color: var(--term-purple) !important;
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.18) !important;
+  outline: none !important;
+}
+
+.dark textarea::placeholder {
+  color: var(--term-muted) !important;
+}
+
+/* Focus ring — all interactive elements */
+.dark :focus-visible {
+  outline: 2px solid rgba(124, 58, 237, 0.65) !important;
+  outline-offset: 2px !important;
+}
+
+/* Placeholder text (Tailwind generated) */
+.dark .placeholder\:text-slate-400::placeholder {
+  color: var(--term-muted) !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   8. DARK MODE — CARD & COURSE GRID
+═══════════════════════════════════════════ */
+
+/* Course card hover glow */
+.dark .group.cursor-pointer:hover .rounded-2xl,
+.dark .cursor-pointer.group:hover .rounded-2xl {
+  box-shadow: var(--term-purple-glow) !important;
+}
+
+/* Card left-border accent on clickable course cards */
+.dark .group.cursor-pointer.flex.flex-col {
+  border-left: 2px solid transparent;
+  border-radius: 1rem;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+.dark .group.cursor-pointer.flex.flex-col:hover {
+  border-left-color: var(--term-purple-40);
+}
+
+/* Rating badge → amber/white stays, star turns purple */
+.dark .text-amber-600 {
+  color: #c084fc !important;
+}
+
+/* Beginner pill */
+.dark .bg-green-100  { background-color: var(--term-green-bg)  !important; }
+.dark .text-green-700 { color: #4ade80 !important; }
+
+/* Intermediate pill */
+.dark .bg-orange-100  { background-color: var(--term-orange-bg) !important; }
+.dark .text-orange-700 { color: #fb923c !important; }
+
+/* Emerald enrolled/free badge */
+.dark .bg-emerald-100 { background-color: var(--term-green-bg) !important; }
+.dark .text-emerald-700 { color: #34d399 !important; }
+.dark .bg-emerald-50  { background-color: rgba(16,185,129,0.08) !important; }
+
+
+/* ═══════════════════════════════════════════
+   9. DARK MODE — LIVE SCREEN
+═══════════════════════════════════════════ */
+
+/* Plan badge chips in live screen */
+.dark .bg-green-100.text-green-700 {
+  background-color: rgba(22,163,74,0.15) !important;
+  color: #4ade80 !important;
+}
+.dark .bg-purple-100.text-purple-700 {
+  background-color: rgba(124,58,237,0.15) !important;
+  color: #c084fc !important;
+}
+.dark .bg-slate-100.text-slate-700 {
+  background-color: rgba(100,100,150,0.15) !important;
+  color: #a0a0c8 !important;
+}
+.dark .bg-pink-100.text-pink-700 {
+  background-color: rgba(219,39,119,0.15) !important;
+  color: #f9a8d4 !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   10. DARK MODE — PROFILE SCREEN
+═══════════════════════════════════════════ */
+
+/* Profile section labels (LEARNING / ACCOUNT) */
+.dark .text-on-surface-variant.uppercase.tracking-wider {
+  color: #a78bfa !important;
+  letter-spacing: 0.1em;
+}
+
+/* Profile stat numbers */
+.dark .text-2xl.font-black {
+  color: var(--term-text);
+}
+
+/* Profile menu rows border */
+.dark .bg-surface-container-lowest.rounded-2xl {
+  border-left: 2px solid var(--term-purple-20);
+}
+
+
+/* ═══════════════════════════════════════════
+   11. DARK MODE — BUTTONS
+═══════════════════════════════════════════ */
+
+/* All buttons: pointer cursor */
+.dark button,
+.dark [role="button"],
+.dark a[href] {
+  cursor: pointer;
+}
+
+/* Signature gradient button active state enhancement */
+.dark .signature-gradient {
+  background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 100%);
+  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.35);
+}
+
+/* Purple-outlined inactive filter pills */
+.dark button.bg-surface-container.text-on-surface-variant {
+  border: 1px solid rgba(124, 58, 237, 0.25);
+}
+.dark button.bg-surface-container.text-on-surface-variant:hover {
+  border-color: rgba(124, 58, 237, 0.5);
+  color: #c4b5fd !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   12. DARK MODE — MORE DRAWER
+═══════════════════════════════════════════ */
+
+/* Admin "More" drawer */
+.dark .bg-surface-container-lowest.rounded-3xl {
+  background-color: #16162E !important;
+  border: 1px solid var(--term-border-subtle);
+  box-shadow: 0 -8px 40px rgba(0,0,0,0.6);
+}
+
+/* More drawer item active */
+.dark .bg-violet-100.text-violet-700 {
+  background-color: rgba(124,58,237,0.22) !important;
+  color: #a78bfa !important;
+}
+
+/* More drawer item inactive */
+.dark .bg-slate-50.text-slate-600 {
+  background-color: rgba(26,26,52,0.7) !important;
+  color: var(--term-secondary) !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   12b. MOBILE — HEADER LOGO SIZE FIX
+═══════════════════════════════════════════ */
+
+/* Shrink the black logo pill in every fixed header on mobile */
+@media (max-width: 767px) {
+  header.fixed .bg-black.rounded-lg,
+  header.fixed .bg-black.rounded-xl {
+    padding: 0.25rem 0.5rem !important;   /* tighter than default px-2 py-1.5 */
+    border-radius: 0.5rem !important;
+  }
+
+  header.fixed img[alt="T.E.R.M. Edu"] {
+    height: 1rem !important;              /* 16px — down from h-5 (20px) */
+    width: auto !important;
+  }
+
+  /* Tighten overall topbar padding on small phones */
+  header.fixed {
+    padding-top: max(0.75rem, env(safe-area-inset-top)) !important;
+    padding-bottom: 0.75rem !important;
+    padding-left: 1rem !important;
+    padding-right: 1rem !important;
+  }
+
+  /* Courses page: reduce gap between logo pill and page title */
+  header.fixed .flex.items-center.gap-3 {
+    gap: 0.5rem !important;
+  }
+
+  /* Keep page title at a comfortable but not oversized size */
+  header.fixed h1 {
+    font-size: 1rem !important;
+    line-height: 1.4 !important;
+  }
+}
+
+/* ═══════════════════════════════════════════
+   13. RESPONSIVE — GLOBAL LAYOUT
+═══════════════════════════════════════════ */
+
+/* No horizontal overflow on any screen */
+html, body {
+  overflow-x: hidden;
+  max-width: 100vw;
+}
+
+/* Ensure images are responsive */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Touch targets minimum 44×44px on mobile */
+@media (max-width: 480px) {
+  button,
+  [role="button"],
+  a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  /* Override for tiny inline buttons */
+  button.w-6, button.h-6 {
+    min-height: unset;
+    min-width: unset;
+  }
+}
+
+/* Desktop: main content max-width 900px */
+@media (min-width: 1025px) {
+  .md\:ml-64 main,
+  .md\:ml-64 > main {
+    max-width: 56.25rem;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+/* ═══════════════════════════════════════════
+   14. DARK MODE — OVERLAY / MODAL IMPROVEMENTS
+═══════════════════════════════════════════ */
+
+/* Backdrop overlays */
+.dark .bg-black\/40 {
+  background-color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Generic modal/sheet cards */
+.dark .rounded-3xl.shadow-2xl {
+  box-shadow: 0 -8px 48px rgba(0,0,0,0.65), 0 0 0 1px rgba(124,58,237,0.10) !important;
+}
+.dark .rounded-2xl.shadow-2xl {
+  box-shadow: 0 8px 48px rgba(0,0,0,0.6), 0 0 0 1px rgba(124,58,237,0.10) !important;
+}
+
+
+/* ═══════════════════════════════════════════
+   15. DARK MODE — MISC POLISH
+═══════════════════════════════════════════ */
+
+/* Progress bars */
+.dark .bg-primary {
+  background-color: var(--term-purple) !important;
+}
+
+/* Green online dot keeps color */
+.dark .bg-emerald-500 {
+  background-color: #10b981 !important;
+}
+.dark .text-emerald-500 {
+  color: #10b981 !important;
+}
+
+/* Red notification badge stays red */
+.dark .bg-red-500 {
+  background-color: #ef4444 !important;
+}
+
+/* Yellow premium star stays yellow */
+.dark .text-yellow-300 {
+  color: #fde047 !important;
+}
+.dark .text-yellow-400 {
+  color: #facc15 !important;
+}
+
+/* Muted outline text */
+.dark .text-outline {
+  color: var(--term-muted) !important;
+}
+
+/* Line-through price */
+.dark .line-through {
+  color: var(--term-muted) !important;
+}
+
+/* Upgrade / empty-state purple icon */
+.dark .text-primary {
+  color: #a78bfa !important;
+}
+
+/* Ring outline primary */
+.dark .focus\:ring-primary\/30:focus {
+  box-shadow: 0 0 0 3px rgba(124, 58, 237, 0.20) !important;
+}
+
+/* Shadow-sm on cards */
+.dark .shadow-sm {
+  box-shadow: 0 1px 8px rgba(0,0,0,0.4) !important;
+}
+.dark .shadow-md {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.5) !important;
+}
+.dark .shadow-lg {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.55) !important;
+}
+.dark .shadow-xl {
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6) !important;
+}
+.dark .shadow-2xl {
+  box-shadow: 0 20px 56px rgba(0,0,0,0.65) !important;
+}
+
+/* Dividers */
+.dark .border-t,
+.dark .border-b {
+  border-color: var(--term-border-subtle) !important;
+}
+.dark .border-r {
+  border-color: var(--term-border-subtle) !important;
+}
+.dark .divide-y > * {
+  border-color: var(--term-border-subtle) !important;
+}

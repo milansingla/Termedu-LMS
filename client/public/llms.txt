@@ -1,0 +1,63 @@
+# T.E.R.M. Edu
+
+> India's #1 Entrepreneurship Learning Management System — Stop Studying. Start Building.
+
+T.E.R.M. Edu (The Academic Atelier) is India's premier platform for entrepreneurship education. It combines an AI-powered entrance examination, live expert-led classes, self-paced business courses, mentorship, and startup incubation — all in one platform.
+
+## Core URLs
+
+- [Homepage](https://app.termedu.in/) — Main platform, login, onboarding
+- [Pricing & Plans](https://app.termedu.in/pricing) — Starter, Growth, Premium plan details
+- [TEET Exam](https://app.termedu.in/teet) — AI-powered entrance test
+- [Login](https://app.termedu.in/login) — Student, lecturer, admin login
+
+## What is T.E.R.M. Edu?
+
+T.E.R.M. Edu is an entrepreneurship-focused LMS (Learning Management System) built for India. It is NOT a general education platform — every course, class, and program is designed to help students build real businesses and startups.
+
+Key differentiators:
+- **TEET** (T.E.R.M. Edu Entrance Test): An AI-powered conversational entrance examination. An AI interviewer named "Priya" conducts the test. Passing TEET unlocks Growth and Premium plans.
+- **Live Classes**: Expert mentors (startup founders, business leaders) teach live sessions.
+- **Self-paced Courses**: Entrepreneurship, business skills, financial literacy, leadership.
+- **Android App**: Available as an Android APK, serving students at app.termedu.in.
+
+## User Roles
+
+1. **Student** — takes TEET, joins courses, attends live sessions, submits projects
+2. **Lecturer** — creates and manages courses, hosts live sessions, evaluates projects
+3. **Admin** — manages users, content, plans, and platform configuration
+
+## Plans
+
+| Plan     | Price     | TEET Required | Key Access |
+|----------|-----------|---------------|------------|
+| Starter  | Free      | No            | Self-paced courses only |
+| Growth   | Paid      | Yes           | Live classes + course bundles |
+| Premium  | Paid      | Yes (top score) | All access + mentorship + incubation |
+
+## Key Features
+
+- AI-powered TEET entrance examination (conversational, conducted by AI "Priya")
+- Live online classes with real expert mentors
+- Self-paced entrepreneurship course library
+- Real-time push notifications
+- Project submission and evaluation
+- Startup incubation and mentorship track
+- Secure OTP-based login (email verification)
+- Server-side persistent sessions (30-day login)
+- Works on Web (all browsers) and Android
+
+## About
+
+- **Full name**: T.E.R.M. Edu — The Academic Atelier
+- **Founded**: 2024
+- **Headquarters**: India
+- **Language**: English, Hindi
+- **Target audience**: Students, aspiring entrepreneurs, startup founders, professionals in India
+- **Contact**: contact@termedu.in
+- **Website**: https://app.termedu.in
+- **Android app**: app.termedu.in (WebView-based APK)
+
+## Sitemap
+
+- https://app.termedu.in/sitemap.xml

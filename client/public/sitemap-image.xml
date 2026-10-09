@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://app.termedu.in/</loc>
+    <image:image>
+      <image:loc>https://app.termedu.in/og-image.png</image:loc>
+      <image:caption>T.E.R.M. Edu — India's #1 Entrepreneurship LMS — Stop Studying. Start Building.</image:caption>
+      <image:title>T.E.R.M. Edu Social Sharing Image</image:title>
+      <image:geo_location>India</image:geo_location>
+    </image:image>
+    <image:image>
+      <image:loc>https://app.termedu.in/term-logo.png</image:loc>
+      <image:caption>T.E.R.M. Edu Official Logo</image:caption>
+      <image:title>T.E.R.M. Edu Logo</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://app.termedu.in/term-icon.png</image:loc>
+      <image:caption>T.E.R.M. Edu App Icon</image:caption>
+      <image:title>T.E.R.M. Edu Icon</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://app.termedu.in/term-mentors.jpeg</image:loc>
+      <image:caption>T.E.R.M. Edu Expert Mentors — Entrepreneurship Educators</image:caption>
+      <image:title>T.E.R.M. Edu Mentors</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://app.termedu.in/pricing</loc>
+    <image:image>
+      <image:loc>https://app.termedu.in/og-image.png</image:loc>
+      <image:caption>T.E.R.M. Edu Pricing Plans — Starter, Growth, Premium</image:caption>
+      <image:title>T.E.R.M. Edu Plans</image:title>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://app.termedu.in/teet</loc>
+    <image:image>
+      <image:loc>https://app.termedu.in/og-image.png</image:loc>
+      <image:caption>TEET — T.E.R.M. Edu Entrance Test — AI-powered entrepreneurship examination</image:caption>
+      <image:title>TEET Entrance Test</image:title>
+    </image:image>
+  </url>
+
+</urlset>
