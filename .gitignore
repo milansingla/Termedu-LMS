@@ -1,0 +1,34 @@
+# Dependencies
+node_modules/
+
+# Build output (client builds into server/public)
+server/public/
+client/dist/
+
+# Environment & secrets — never commit these
+.env
+.env.*
+!.env.example
+*.env
+!*.env.example
+firebase-admin.json
+*service-account*.json
+*.pem
+*.key
+
+# Runtime data
+server/data/
+logs/
+*.log
+npm-debug.log*
+
+# Release bundles
+*.tar.gz
+*.zip
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+*.swp

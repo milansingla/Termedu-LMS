@@ -1,0 +1,19 @@
+{
+  "name": "termedu-lms",
+  "version": "1.0.0",
+  "private": true,
+  "description": "T.E.R.M. Edu — full-stack Learning Management System (React + Express + Supabase)",
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
+  },
+  "scripts": {
+    "postinstall": "npm --prefix client install && npm --prefix server install",
+    "dev:client": "npm --prefix client run dev",
+    "dev:server": "npm --prefix server run dev",
+    "build": "npm --prefix client run build",
+    "lint": "npm --prefix client run lint",
+    "start": "npm --prefix server start",
+    "db:migrate": "node server/migrate.js"
+  }
+}
