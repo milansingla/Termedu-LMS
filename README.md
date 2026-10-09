@@ -178,6 +178,8 @@ See [`server/.env.example`](server/.env.example) for the full list.
 
 ## Security
 
+Production credentials are stored separately in a private location and are not part of this repository.
+
 Secrets are never committed. Keep `.env` files and Firebase service-account JSON out of version control (already covered by `.gitignore`), and never expose the Supabase `service_role` key to the browser.
 
 ---
